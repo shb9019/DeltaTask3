@@ -1,6 +1,10 @@
 <?php
 	session_start();
 	header("Cache-Control: no-cache, must-revalidate");
+	if(isset($_SESSION["username"])){
+		header("Location: ../Home");
+		exit();
+	}
 ?>
 
 <!DOCTYPE html>
@@ -10,6 +14,7 @@
 		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<link rel="shortcut icon" href="../resources/seo-web-code-icon.png" type="image/png" />
+		<script src='https://www.google.com/recaptcha/api.js'></script>
 		<title>Register</title>
 		<style>
 			header{
@@ -103,6 +108,9 @@
 	<body>
 		<script>
 			var error;
+			function recaptcha_callback(){
+    		$('#butt').prop("disabled", false);
+    		}
 			var email = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i; 
 			var username = /^[A-Za-z0-9_]{1,20}$/;
 			var password =  /^[A-Za-z0-9!@#$%^&*()_]{6,20}$/;
@@ -201,6 +209,7 @@
 			<input type="text" name="email" placeholder="E-Mail"><br>
 			<input type="password" name="password" placeholder="Password"><br>
 			<input type="password" name="password2" placeholder="Retype Password">
+			<div class="g-recaptcha" data-sitekey="6Lf3XCgUAAAAACiv3kHD-ZTDKbnPJoQ-GCcdwke8" data-callback="recaptcha_callback"></div>
 			<input type="submit" value="Register" id="butt">
 			<p id="Error"></p>
 		</form>
