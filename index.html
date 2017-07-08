@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Alike+Angular|Asul|Cabin|Concert+One|Eczar|Fruktur|Inconsolata|Kavoon|Neuton|Nunito|Nunito+Sans|Pacifico|Quicksand|Rubik|Space+Mono|Tillana|VT323|Work+Sans" rel="stylesheet">
+		<title>Welcome</title>
+		<link rel="shortcut icon" href="resources/seo-web-code-icon.png" type="image/png" />
+		<style>
+			body{
+				background-image: url("resources/wall.jpg");
+				background-size: 100%;
+				color: white;
+			}
+			footer{
+				position: fixed;
+				bottom: 10px;
+				width: 100%;
+				text-align: right;
+			}
+			nav i{
+				padding: 0px 30px;
+			}
+			h1{
+				font-family: 'Eczar',serif;
+				position: fixed;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%,-50%);
+				font-size: 70px;
+				text-align: center;
+			}
+			nav i:hover{
+				color: #666;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<script>
+			function register(){
+				window.location = "register";
+			}
+
+			function login(){
+				window.location = "login";
+			}
+		</script>
+		<header>
+			<i class="fa fa-code fa-3x" aria-hidden="true" title="Snipps"></i>
+ 		</header>
+ 		<footer>
+ 			<nav>
+				<i class="fa fa-user-plus fa-2x" aria-hidden="true" title="Register" onclick="register()"></i>
+				<i class="fa fa-sign-in fa-2x" aria-hidden="true" title="Log In" onclick="login()"></i>
+			</nav>
+ 		</footer>
+ 		<h1>WELCOME TO SNIPPS</h1>
+	</body>	
+</html>
